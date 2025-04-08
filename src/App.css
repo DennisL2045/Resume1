@@ -1,38 +1,179 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined');
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.resume-container {
+  font-family: "Microsoft JhengHei", sans-serif;
+  padding: 20px;
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+  background-color: #ffffff;
+  color: #000000;
+  transition: background-color 0.3s ease, color 0.3s ease;
   min-height: 100vh;
+}
+
+.dark-mode {
+  background-color: #131314;
+  color: #fff;
+}
+
+.toggle-container {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+}
+.mode-toggle {
+  padding: 8px 12px;
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.icon {
+  font-size: 32px;
+  color: #000;
+}
+.dark-mode .icon {
+  color: #fff;
+}
+
+.header-knob-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+.resume-header {
+  margin-right: 60px;
+}
+@media (max-width: 768px) {
+  .resume-header {
+    margin-right: 0;
+  }
 }
 
-.App-link {
-  color: #61dafb;
+.project-first-line {
+  font-size: 24px !important;
+  font-weight: 600;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.rotary-knob-container {
+  position: relative;
+  width: 300px;
+  height: 350px;
+}
+.rotary-knob {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, silver, white);
+  box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px,
+              rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transition: transform 0.5s ease;
+}
+.arrow-indicator {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 15px solid rgb(215, 64, 64);
+}
+.dark-mode .arrow-indicator {
+  border-bottom-color: gold;
+}
+.rotary-knob-labels {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.knob-label {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform-origin: 0 0;
+  cursor: pointer;
+  font-size: 18px;
+  user-select: none;
+  font-weight: 600;
+  transform: rotate(var(--rotation))
+    translate(0, calc(var(--label-distance) * -1))
+    rotate(calc(var(--rotation) * -1));
+}
+
+.knob-label[data-index="0"] {
+  margin-left: -18px;
+}
+.knob-label[data-index="1"] {
+  margin-left: -18px;
+}
+.knob-label[data-index="2"] {
+  margin-left: -25px;
+  margin-top: -15px;
+}
+.knob-label[data-index="3"] {
+  margin-left: -35px;
+  margin-top: -10px;
+}
+.knob-label[data-index="4"] {
+  margin-left: -23px;
+  margin-top: -15px;
+}
+.knob-label[data-index="5"] {
+  margin-left: -18px;
+}
+
+.resume-section {
+  margin-bottom: 40px;
+  text-align: left;
+  max-width: 800px;
+  margin: 0 auto 40px auto;
+}
+.resume-section h2 {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 5px;
+  font-size: 30px;
+}
+.resume-section p {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.resume-section li {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+/* 回到最上方按鈕 */
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #E10E5B;
+  border: none;
+  border-radius: 50%;
+  padding: 12px;
+  cursor: pointer;
+  box-shadow: 0px 2px 6px rgba(0,0,0,0.3);
+  transition: background-color 0.3s;
+}
+.back-to-top:hover {
+  background-color: #F6BBBB;
+}
+.back-to-top img {
+  width: 24px;
+  height: 24px;
 }
