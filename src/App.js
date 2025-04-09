@@ -316,8 +316,9 @@ function App() {
   const [darkMode, setDarkMode] = useState(prefersDark);
   
   useEffect(() => {
-    document.body.style.backgroundColor = darkMode ? '#131314' : '#ffffff';
-    document.documentElement.style.backgroundColor = darkMode ? '#131314' : '#ffffff';
+    const bgColor = darkMode ? '#131314' : '#ffffff';
+    document.body.style.backgroundColor = bgColor;
+    document.documentElement.style.backgroundColor = bgColor;
   }, [darkMode]);
 
   const [activeSection, setActiveSection] = useState(0);
