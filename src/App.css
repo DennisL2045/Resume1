@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined');
 
 html, body {
-  height: 100%;
   margin: 0;
   padding: 0;
 }
@@ -157,22 +156,24 @@ html, body {
   line-height: 1.5;
 }
 
-/* 回到最上方按鈕 */
 .back-to-top {
   position: fixed;
   bottom: 30px;
   right: 30px;
-  background-color: #E10E5B;
   border: none;
   border-radius: 50%;
   padding: 12px;
   cursor: pointer;
-  box-shadow: 0px 2px 6px rgba(0,0,0,0.3);
-  transition: background-color 0.3s;
+  background-color: #E10E5B;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.1s, transform 0.2s ease;
 }
-.back-to-top:hover {
+
+.back-to-top:active {
   background-color: #F6BBBB;
+  transform: scale(0.95);
 }
+
 .back-to-top img {
   width: 24px;
   height: 24px;
