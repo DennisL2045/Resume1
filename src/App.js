@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import './App.css';
 
 function TextParagraphs({ text, highlightFirst = false }) {
@@ -314,6 +314,11 @@ function App() {
 
   const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
   const [darkMode, setDarkMode] = useState(prefersDark);
+  
+  useEffect(() => {
+    document.body.style.backgroundColor = darkMode ? '#131314' : '#ffffff';
+    document.documentElement.style.backgroundColor = darkMode ? '#131314' : '#ffffff';
+  }, [darkMode]);
 
   const [activeSection, setActiveSection] = useState(0);
   const [rotationAngle, setRotationAngle] = useState(0);
